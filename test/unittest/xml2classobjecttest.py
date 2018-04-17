@@ -32,6 +32,9 @@ class Xml2ClassObjectTest(unittest.TestCase):
 
         obj = Xml2ClassObject(string_xml)
 
+        self.assertFalse(hasattr(obj.Element1, 'id'))
+        self.assertFalse(hasattr(obj, 'ElementX'))
+
         self.assertEqual(obj.Element1.value, 'Element1 text')
         self.assertEqual(obj.Element1._section_name, 'Element1')
         self.assertEqual(obj.Element2.value, 'Element2 text')

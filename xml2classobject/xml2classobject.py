@@ -40,10 +40,6 @@ class _Section(object):
     def add_attr(self, name, value):
         setattr(self, name, value)
 
-    def __getattr__(self, name):
-        raise Exception("'{1}' has no attribute '{0}'".format(
-            name, self._section_name))
-
 
 class Xml2ClassObject(_Section):
     def __init__(self, xml):
